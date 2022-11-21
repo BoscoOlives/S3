@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import ttk
 
 
+# this function create 4 videos with different size's
 def resize_video(path):
     os.system('ffmpeg -i ' + path + ' -s 1280x720 -c:a copy 720p.mp4')
     os.system('ffmpeg -i ' + path + ' -s 640x480 -c:a copy 480p.mp4')
@@ -12,6 +13,7 @@ def resize_video(path):
     os.system('ffmpeg -i ' + path + ' -s 160x120 -c:a copy 160x120.mp4')
 
 
+# 4 next different functions convert the codecs
 def vp8(path):
     os.system('ffmpeg -i ' + path + '.mp4' + ' -c:v libvpx  -c:a libvorbis ' + path + '-VP8.webm')
 
